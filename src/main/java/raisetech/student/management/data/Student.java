@@ -1,5 +1,6 @@
 package raisetech.student.management.data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,5 +20,6 @@ public class Student {
   private int age;
   private Gender gender; //Javaでenum型を取り扱う場合、別途定義する必要がある
   private String remark;
+  @JsonProperty("isDeleted") // JSONシリアライザー（Jackson）でbooleanフィールド名が自動調整されることを防ぐ
   private boolean isDeleted;
 }
